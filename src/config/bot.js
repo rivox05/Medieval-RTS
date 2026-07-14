@@ -650,34 +650,3 @@ export function getRandomColor() {
 
 export default botConfig;
 
-const{ PermissionsBitField, EmbedBuilder } = require('discord.js');
-
-module.exports = {
-    name: "rolegive"
-    description: "to give role to a member.",
-
-    run: async (client, message, args) => {
-        const member = message.mentions.members.first
-        () || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join("" || x.user.username === args[0]));
-
-        if (!message.member.permissions.has(PermissionsBitField.Flags.Administrator)) return message.channel.send("You dont have permissions to give role!");
-
-        if (!member) return message.channel.send("You must specify member.");
-
-        const role = message.mentions.roles.first();
-
-        if (!role) {
-            return message.channel.send("Please mention a role to give to the user")
-        }
-
-        member.role.add(role)
-        .then(() => {
-            message.channel.send(`**${role.name}** role has been given to **${member.user.username}**.`);
-        })
-        .catch((error) => {
-            console.log(error)
-            message.channel.send("i dont have permissions or the role you want to give is above my role")
-        })
-    }
-}
-
