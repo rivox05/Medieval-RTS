@@ -23,9 +23,9 @@ export const botConfig = {
     // 5 = Competing
     activities: [
       {
-        name: "rivox destroying hex", // required by Discord API, not shown in the client
+        name: "join training and tryout sessions", // required by Discord API, not shown in the client
         state: "Made by rivox0_0",     // this is what people actually see
-        type: 3,               // Custom
+        type: 4,               // Custom
       },
     ],
   },
